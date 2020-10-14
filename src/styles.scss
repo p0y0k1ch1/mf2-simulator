@@ -1,0 +1,33 @@
+html
+{
+  height: 100%;
+}
+
+body
+{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
+div.page
+{
+  height: 100%;
+}
+
+span.title
+{
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.25rem;
+}
+
+.mat-button-focus-overlay
+{
+  background-color: transparent!important;
+}
+
+.mat-icon-button
+{
+  line-height: 0!important;
+}

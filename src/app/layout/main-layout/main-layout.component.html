@@ -1,0 +1,36 @@
+<mat-sidenav-container>
+  <mat-sidenav #leftnav mode="over">
+    <mat-toolbar>
+      <span>Menu</span>
+    </mat-toolbar>
+    <mat-list>
+      <mat-list-item matRipple (click)="navigate('')">
+        <span mat-line>ホーム</span>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item matRipple (click)="navigate('/damage')">
+        <span mat-line>移植版用ダメージ計算シミュレータ</span>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item matRipple (click)="navigate('/hitRate')">
+        <span mat-line>移植版用命中率計算シミュレータ</span>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="page" fxLayout="column" fxLayoutAlign="space-between">
+      <header>
+        <mat-toolbar fxLayoutAlign="start center" fxLayoutGap="16px">
+          <button mat-icon-button (click)="leftnav.open()">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <span>MF2 Simulator</span>
+        </mat-toolbar>
+      </header>
+      <main fxFlex="grow">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
