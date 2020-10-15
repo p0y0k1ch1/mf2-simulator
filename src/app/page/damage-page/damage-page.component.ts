@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 
-import { ValidatorService } from 'src/app/service/validator.service';
+import { ValidationService } from 'src/app/service/validation.service';
 
 export interface ResultRow
 {
@@ -30,7 +30,7 @@ export class DamagePageComponent implements OnInit
       [
         Validators.required,
         (control: AbstractControl): { [key: string]: any } | null => {
-          return this.validatorService.validateNumberString(control.value, 1, 999);
+          return this.validationService.validateNumberString(control.value, 1, 999);
         },
       ],
     ],
@@ -39,7 +39,7 @@ export class DamagePageComponent implements OnInit
       [
         Validators.required,
         (control: AbstractControl): { [key: string]: any } | null => {
-          return this.validatorService.validateNumberString(control.value, 1, 999);
+          return this.validationService.validateNumberString(control.value, 1, 999);
         },
       ],
     ],
@@ -48,7 +48,7 @@ export class DamagePageComponent implements OnInit
       [
         Validators.required,
         (control: AbstractControl): { [key: string]: any } | null => {
-          return this.validatorService.validateNumberString(control.value, 1, 80);
+          return this.validationService.validateNumberString(control.value, 1, 80);
         },
       ],
     ],
@@ -56,7 +56,7 @@ export class DamagePageComponent implements OnInit
 
   constructor(
     private fb: FormBuilder,
-    private validatorService: ValidatorService,
+    private validationService: ValidationService,
   ) {}
 
   ngOnInit(): void

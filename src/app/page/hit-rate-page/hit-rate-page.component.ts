@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
-import { ValidatorService } from 'src/app/service/validator.service';
+import { ValidationService } from 'src/app/service/validation.service';
 
 export interface ResultRow
 {
@@ -28,7 +28,7 @@ export class HitRatePageComponent implements OnInit
       [
         Validators.required,
         (control: AbstractControl): { [key: string]: any } | null => {
-          return this.validatorService.validateNumberString(control.value, 1, 999);
+          return this.validationService.validateNumberString(control.value, 1, 999);
         },
       ],
     ],
@@ -37,7 +37,7 @@ export class HitRatePageComponent implements OnInit
       [
         Validators.required,
         (control: AbstractControl): { [key: string]: any } | null => {
-          return this.validatorService.validateNumberString(control.value, -25, 30);
+          return this.validationService.validateNumberString(control.value, -25, 30);
         }
       ]
     ],
@@ -45,7 +45,7 @@ export class HitRatePageComponent implements OnInit
 
   constructor(
     private fb: FormBuilder,
-    private validatorService: ValidatorService,
+    private validationService: ValidationService,
   ) {}
 
   ngOnInit(): void
