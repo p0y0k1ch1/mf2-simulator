@@ -9,7 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit
 {
+  icon: string;
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void
+  {
+    this.initIcon();
+  }
+
+  initIcon(): void
+  {
+    const min = 1;
+    const max = 25;
+    const id = Math.floor(Math.random() * (max - min + 1)) + min;
+    this.icon = `/assets/img/pixie/${id}.jpg`;
+  }
 }
